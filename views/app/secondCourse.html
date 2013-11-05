@@ -1,0 +1,47 @@
+<Title:>
+    Вторые блюда
+
+<Body:>
+    <div class="row">
+        <form class="span4" x-bind="submit: sCourse.add">
+            <h3>Добавление блюда</h3>
+            <fieldset>
+                <label>Название</label>
+                <input type="text" id="courseName" autofocus value={_page.newItem.name}>
+                <label>Цена</label>
+                <input type="number" class="input-mini" value={_page.newItem.price}>
+                <div>
+                    <button type="submit" class="btn">Добавить</button>
+                </div>
+            </fieldset>
+        </form>
+        <div class="span7 offset1">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="">Название</th>
+                    <th>Цена</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#each _page.sCourse as :item}
+                <tr>
+                    <td>{{:item.name}}</td>
+                    <td>
+                        <!--<input type="number" class="input-mini {#if not(:item.editing)}hide-important{/}" value="{:item.price}"/>-->
+                        <!--<span class="{#if :item.editing}hide-important{/}">{:item.price}</span>-->
+                        {#if :item.editing}
+                        <input type="number" class="input-mini" value="{:item.price}"/>
+                        {else}
+                        <span>{:item.price}</span>
+                        {/}
+                        &nbsp;
+                        <button class="btn btn-mini" x-bind="click: course.toggleEdit" title="Редактировать цену"><i class="icon-edit"></i></button>
+                    </td>
+                    <td><a class="btn btn-mini" title="Удалить" x-bind="click: course.remove"><i class="icon-trash"></i></a></td>
+                </tr>
+                {/}
+                </tbody>
+            </table>
+        </div>
+    </div>

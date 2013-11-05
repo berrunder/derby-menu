@@ -1,0 +1,43 @@
+<Title:>
+    Создание меню на сегодня
+
+<Body:>
+    <div class="row-fluid show-grid">
+        <div class="span5">
+            <table class="table">
+                <caption><h5>Первые блюда</h5></caption>
+                <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#each _page.fCourse}<app:courseRow>{/}
+                </tbody>
+            </table>
+        </div>
+        <div class="span5 offset1">
+            <table class="table">
+                <caption><h5>Вторые блюда</h5></caption>
+                <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#each _page.sCourse}<app:courseRow>{/}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<courseRow:>
+    <tr x-bind="click: course.setDate" class="selectable {#if isDateNow(.date)}success{/}">
+        <td>{#if isDateNow(.date)}<i class="icon-ok"></i>{else}<i class="icon-">&nbsp;</i>{/}</td>
+        <td>{{name}}</td>
+        <td>{price}</td>
+    </tr>
