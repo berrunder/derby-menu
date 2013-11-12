@@ -1,11 +1,12 @@
 {
-  "name": "first-derby",
-  "description": "",
-  "version": "0.0.0",
+  "name": "derby-menu",
+  "description": "Simple derbyjs based app to choose menu for dinner.",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/berrunder/derby-menu.git"
   },
+  "author": "Alexander Cherkashin <sehcnas@yandex.ru>",
   "scripts": {
     "start": "node server.js"
   },
@@ -16,8 +17,7 @@
     "livedb-mongo": "~0.2.0",
     "racer-browserchannel": "~0.1.0",
     "connect-mongo": "~0.3.2",
-    "derby-ui-boot": "0.1.x",
-    "mongoskin": "~0.6.0"
+    "derby-ui-boot": "0.1.x"
   },
   "engines": {
     "node": "0.10.x"
