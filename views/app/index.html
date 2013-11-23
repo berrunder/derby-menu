@@ -4,6 +4,7 @@
 <import: src="./menu">
 <import: src="./setMenu">
 <import: src="./login">
+<import: src="./userList">
 
 <!--
   Derby templates are similar to Handlebars, except that they are first
@@ -32,10 +33,11 @@
           <ul class="nav">
             <!-- Other templates are included like HTML elements -->
             <app:navLink title="Меню на сегодня" href="/menu">
-            {#if equal(_session.user.accessToken, 'hostAdmin')}
-            <app:navLink title="Создание меню на сегодня" href="/setMenu">
+            {#if showAll(_session.user.accessToken)}
+            <app:navLink title="Создать меню" href="/setMenu">
             <app:navLink title="Первые блюда" href="/firstCourse">
             <app:navLink title="Вторые блюда" href="/secondCourse">
+            <app:navLink title="Пользователи" href="/userList">
             {/}
           </ul>
           <ul class="nav pull-right">

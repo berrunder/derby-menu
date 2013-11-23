@@ -1,0 +1,26 @@
+<Title:>
+    Список пользователей
+
+<Body:>
+    <div class="row-fluid">
+        <div class="span12 text-center">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Имя пользователя</td>
+                        <td>Заказ</td>
+                        <td>Сумма</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {#each _page.userList}
+                    <tr>
+                        <td>{.name}</td>
+                        <td>{.courseList}</td>
+                        <td>{.sum} р.</td>
+                    </tr>
+                    {/}
+                </tbody>
+            </table>
+        </div>
+    </div>
