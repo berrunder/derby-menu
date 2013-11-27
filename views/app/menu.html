@@ -35,10 +35,18 @@
                         <th>&nbsp;</th>
                         <th>Название</th>
                         <th>Цена</th>
+                        <th>Половина</th>
                     </tr>
                 </thead>
                 <tbody>
-                {#each _page.fCourse}<app:courseRow>{/}
+                {#each _page.fCourse}
+                    <tr x-bind="click: toggleRadioCourse" class="selectable {#if selected(_page.user.courses, .id)}success{/}">
+                        <td>{#if selected(_page.user.courses, .id)}<i class="icon-ok"></i>{else}<i class="icon-">&nbsp;</i>{/}</td>
+                        <td>{{.name}}</td>
+                        <td>{.price}</td>
+                        <td>{#if selected(_page.user.courses, .id)}<input type="checkbox" checked={_page.user.halfFirst} />{/}</td>
+                    </tr>
+                {/}
                 </tbody>
             </table>
         </div>
