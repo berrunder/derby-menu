@@ -3,14 +3,13 @@
 
 <Body:>
     <div class="row-fluid">
-        <form class="span4" x-bind="submit: fCourse.add">
+        <form class="span4" x-bind="submit: course.add">
             <h3>Добавление блюда</h3>
             <fieldset>
                 <label>Название</label>
                 <input type="text" id="courseName" autofocus value={_page.newItem.name}>
                 <label>Цена</label>
                 <input type="number" class="input-mini" value={_page.newItem.price}>
-                <input type="hidden" value={_page.newItem.type}>
                 <div>
                     <button type="submit" class="btn">Добавить</button>
                 </div>
@@ -25,7 +24,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                {#each _page.fCourse as :item}
+                {#each _page.courses as :item}
                 <tr>
                     <td>{{:item.name}}</td>
                     <td>
