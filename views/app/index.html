@@ -32,7 +32,7 @@
           <ul class="nav">
             <!-- Other templates are included like HTML elements -->
             <app:navLink title="Меню на сегодня" href="/menu">
-            {#if showAll(_session.user.accessToken)}
+            {#if _session.asPlanner}
             <app:navLink title="Создать меню" href="/setMenu">
             <app:navLink title="Первые блюда" href="/firstCourse">
             <app:navLink title="Вторые блюда" href="/secondCourse">
@@ -40,7 +40,7 @@
             {/}
           </ul>
           <ul class="nav pull-right">
-            <app:navLink title="Войти" href="/login">
+            <app:navLink title="{{#if _session.asPlanner}}Выйти{{else}}Войти{{/}}" href="{{#if _session.asPlanner}}/logout{{else}}/login{{/}}">
           </ul>
         </div>
       </div>
