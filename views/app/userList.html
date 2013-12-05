@@ -9,15 +9,16 @@
                     <tr>
                         <td>Имя пользователя</td>
                         <td>Заказ</td>
-                        <td>Сумма</td>
+                        <td colspan="2">Сумма</td>
                     </tr>
                 </thead>
                 <tbody>
-                    {#each _page.userList}
+                    {#each _page.users as :user}
                     <tr>
-                        <td>{.name}</td>
-                        <td>{.courseList}</td>
-                        <td>{.sum} р.</td>
+                        <td>{:user.name}</td>
+                        <td>{getOrderText(:user, _page.courses)}.</td>
+                        <td>{getOrderPrice(:user, _page.courses)} р.</td>
+                        <td><button class="btn btn-mini" x-bind="click: clearUser" title="Очистить данные пользователя"><i class="icon-remove"></i></button></td>
                     </tr>
                     {/}
                 </tbody>
