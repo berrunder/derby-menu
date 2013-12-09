@@ -18,7 +18,8 @@
     "racer-browserchannel": "~0.1.0",
     "connect-mongo": "~0.3.2",
     "derby-ui-boot": "0.1.x",
-    "mongoskin": "0.6.x"
+    "mongoskin": "0.6.x",
+    "nconf": "~0.6.9"
   },
   "engines": {
     "node": "0.10.x"

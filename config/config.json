@@ -1,0 +1,13 @@
+{
+    "redis_db": 1,
+    "mongourl": "mongodb://localhost:27017/project",
+    "planner_password": "hostAdmin",
+    "session": {
+        "maxAge": 604800000,
+        "secret": "MY LITTLE SECRET"
+    },
+    "static": {
+        "maxAge": 31557600000
+    },
+    "maxUploadSize": 1000000
+}
