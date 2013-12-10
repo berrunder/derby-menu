@@ -1,5 +1,5 @@
 <Title:>
-    {#if equal(_page.courseType, 1)}Первые блюда{else}Вторые блюда{/}
+    {#if equal(_page.courseType, 1)}Первые{else}Вторые{/} блюда
 
 <Body:>
     <div class="row-fluid">
@@ -10,6 +10,11 @@
                 <input type="text" id="courseName" autofocus value={_page.newItem.name}>
                 <label>Цена</label>
                 <input type="number" class="input-mini" value={_page.newItem.price}>
+                {{#if equal(_page.courseType, 2)}}
+                <label for="isSalad" class="checkbox">
+                    <input type="checkbox" id="isSalad" checked="{_page.newItem.isSalad}"/> Салат
+                </label>
+                {{/}}
                 <div>
                     <button type="submit" class="btn">Добавить</button>
                 </div>
@@ -21,6 +26,7 @@
                 <tr>
                     <th class="">Название</th>
                     <th>Цена</th>
+                    <td>&nbsp;</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,6 +41,11 @@
                         {/}
                         &nbsp;
                         <button class="btn btn-mini" x-bind="click: course.toggleEdit" title="Редактировать цену"><i class="icon-edit"></i></button>
+                        {{#if equal(_page.courseType, 2)}}
+                        &nbsp;<label class="checkbox inline">
+                            <input type="checkbox" checked="{:item.isSalad}"/> Салат
+                        </label>
+                        {{/}}
                     </td>
                     <td><a class="btn btn-mini" title="Удалить" x-bind="click: course.remove"><i class="icon-trash"></i></a></td>
                 </tr>
